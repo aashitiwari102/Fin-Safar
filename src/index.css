@@ -10,19 +10,16 @@
 
   --font-sans: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  --animate-gradient: gradient 15s ease infinite;
+  --animate-gradient: gradient 12s ease infinite;
   --animate-shake: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  --animate-fade-in: fadeIn 0.8s ease-out forwards;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
 
   @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   @keyframes shake {
@@ -30,6 +27,22 @@
     20%, 80% { transform: translate3d(2px, 0, 0); }
     30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
     40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
   }
 }
 
@@ -39,8 +52,8 @@
   font-weight: 400;
 
   color-scheme: dark;
-  color: var(--color-brand-cream);
-  background-color: var(--color-brand-midnight);
+  color: #A7EBF2;
+  background-color: #011C40;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -55,7 +68,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   /* Fallback */
-  background: var(--color-brand-midnight);
+  background: #011C40;
 }
 
 /* Premium Scrollbar */
@@ -64,14 +77,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-brand-midnight);
+  background: #011C40;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-brand-blue-dark);
+  background: #26658C;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-brand-blue);
+  background: #54ACBF;
 }
